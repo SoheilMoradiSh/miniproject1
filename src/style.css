@@ -24,3 +24,16 @@ body{
     background: black;
     color: chocolate;
 }
+.btn{
+    display: flex;
+    
+}
+.mybtn{
+    background-color: #999;
+    padding: 1rem;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.mybtn:hover{
+    color: rgb(57, 55, 55);
+}
