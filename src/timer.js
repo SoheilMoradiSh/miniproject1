@@ -3,19 +3,25 @@ import ReactDOM from 'react-dom';
 
 import './style.css'
 
+var interval;
 class Timer extends React.Component{
   constructor(){
     super();
     this.state = {
-      time : new Date().toLocaleTimeString()
+      time : 10
     }
   }
   componentDidMount(){
-      setInterval(()=>{
+      interval=setInterval(()=>{
         this.setState({
-          time:new Date().toLocaleTimeString()
+          time:this.state.time - 1
         })
       } , 1000)
+  }
+  componentDidUpdate(){
+    if(this.state.time===0){
+      clearInterval(interval)
+    }
   }
   render(){
     return(
